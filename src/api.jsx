@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Api() {
-  const [resourceType, setResourceType] = useState("posts");
+  const [resourceType, setResourceType] = useState("posts"); // resourceType is the initial state of the resourceType variable and setResourceType is the function that changes the state of the resourceType variable (which is the variable that is used to determine which API endpoint to use)
+  // const [todos, setTodos] = useState();// todos is the initial state of the todos variable and setTodos is the function that changes the state of the todos variable (which is the variable that is used to store the data from the API endpoint)
   const [items, setItems] = useState([]);
-  //   console.log("render");
+  console.log("render");
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
@@ -13,10 +14,13 @@ export default function Api() {
       .then((data) => setItems(data));
     console.log("useEffect resource change");
     return () => {
-      console.log("unmount"); //clean up from the useEffect hook when the component unmounts and unsubscribes from the api call of that button click event listener
+      console.log("unmount"); //clean up from the useEffect hook when the component unmounts and unsubscribes from the api call of that button click event listener and call every time the component is unmounted
     };
   }, [resourceType]);
 
+  //   useEffect(() => {
+  //     console.log(`useEffect resource change ${items}`);
+  //   }, [items]);
   //Render. Rendering is a process that is triggered by a change of state in some component of your application, when a state change occurs React:
   //   useEffect(() => {
   //     console.log("onMount");
