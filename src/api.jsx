@@ -5,12 +5,16 @@ import axios from "axios";
 export default function Api() {
   const [resourceType, setResourceType] = useState("posts");
   const [items, setItems] = useState([]);
-  console.log("render");
+  //   console.log("render");
 
   useEffect(() => {
     fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
       .then((res) => res.json())
       .then((data) => setItems(data));
+    console.log("useEffect resource change");
+    return () => {
+      console.log("unmount"); //clean up from the useEffect hook when the component unmounts and unsubscribes from the api call of that button click event listener
+    };
   }, [resourceType]);
 
   //Render. Rendering is a process that is triggered by a change of state in some component of your application, when a state change occurs React:
