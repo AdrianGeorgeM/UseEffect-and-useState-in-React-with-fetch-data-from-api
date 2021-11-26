@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React, { useState } from "react";
+
+import Counter from "./Counter";
+import TodoList from "./TodoList";
+import Api from "./api";
 
 function App() {
+  const [showCounter, setShowCounter] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Api />
     </div>
   );
 }
 
 export default App;
+
+//  {/* <h1> Our App</h1>
+//     {/* <TodoList /> */}
+//     <Counter />
+//     <button onClick={() => setShowCounter(!showCounter)}>
+//       {showCounter ? "Hide Counter" : "Show Counter"}
+//     </button>
+//     {showCounter && <Counter />}
+//      */}
