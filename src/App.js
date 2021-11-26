@@ -5,12 +5,14 @@ import React, { useState } from "react";
 import Counter from "./Counter";
 import TodoList from "./TodoList";
 import Api from "./api";
+import Api2 from "./api2";
 
 function App() {
   const [showCounter, setShowCounter] = useState(false);
   return (
     <div className='App'>
-      <Api />
+      {/* <Api /> */}
+      <Api2 />
     </div>
   );
 }

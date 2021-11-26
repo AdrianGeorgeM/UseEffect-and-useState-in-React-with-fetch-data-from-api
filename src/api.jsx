@@ -30,7 +30,7 @@ export default function Api() {
   return (
     <>
       <div>
-        <button onClick={() => setResourceType("posts")}>Posts</button>
+        <button onClick={() => setResourceType("posts")}>{resourceType}</button>
         <button onClick={() => setResourceType("users")}> Users</button>
         <button onClick={() => setResourceType("comments")}>Comments</button>
       </div>
